@@ -65,50 +65,6 @@
       "endDate": "2025-05-07",
       "image": "may.jpg",
       "isFeatured": false
-    },
-    {
-      "id": "7",
-      "title": "По следам аланов",
-      "country": "Архыз",
-      "description": "Исторический тур по древним храмам и археологическим местам Архыза.",
-      "price": 8100,
-      "startDate": "2025-09-12",
-      "endDate": "2025-09-15",
-      "image": "history.jpg",
-      "isFeatured": false
-    },
-    {
-      "id": "8",
-      "title": "Йога-ретрит в горах",
-      "country": "Архыз",
-      "description": "Тишина, практика и восстановление в живописных местах Кавказа.",
-      "price": 14500,
-      "startDate": "2025-07-05",
-      "endDate": "2025-07-10",
-      "image": "yoga.jpg",
-      "isFeatured": true
-    },
-    {
-      "id": "9",
-      "title": "Осенний тур по Архызу",
-      "country": "Архыз",
-      "description": "Краски осени в горах, фототуры и прогулки по живописным местам.",
-      "price": 8700,
-      "startDate": "2025-10-01",
-      "endDate": "2025-10-04",
-      "image": "autumn.jpg",
-      "isFeatured": false
-    },
-    {
-      "id": "10",
-      "title": "Пеший маршрут: Архыз — Аманауз",
-      "country": "Архыз",
-      "description": "Для опытных туристов: пеший маршрут через перевалы и ущелья.",
-      "price": 11200,
-      "startDate": "2025-08-15",
-      "endDate": "2025-08-20",
-      "image": "amanaus.jpg",
-      "isFeatured": false
     }
   ],
   "bookings": [
