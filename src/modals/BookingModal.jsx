@@ -85,7 +85,7 @@ const BookingModal = ({ open, onClose, tour }) => {
       createdAt: new Date().toISOString()
     };
 
-    await axios.post('http://localhost:3001/bookings', newBooking);
+    await axios.post('https://hochu-tur-back.onrender.com/bookings', newBooking);
     setSuccessOpen(true);
   };
 

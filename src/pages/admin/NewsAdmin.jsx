@@ -6,7 +6,7 @@ import {
 import { Add, Delete, Edit } from '@mui/icons-material';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/news';
+const API_URL = 'https://hochu-tur-back.onrender.com/news';
 
 const NewsAdmin = () => {
   const [news, setNews] = useState([]);

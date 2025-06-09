@@ -20,7 +20,7 @@ const NewsPage = () => {
     const [selected, setSelected] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/news').then(res => setNews(res.data));
+        axios.get('https://hochu-tur-back.onrender.com/news').then(res => setNews(res.data));
     }, []);
 
     const filteredNews = news

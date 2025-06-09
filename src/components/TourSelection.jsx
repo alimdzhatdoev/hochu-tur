@@ -20,7 +20,7 @@ const TourSelection = ({ onApply }) => {
 
   // Загружаем типы туров из БД
   useEffect(() => {
-    axios.get('http://localhost:3001/tours').then(res => {
+    axios.get('https://hochu-tur-back.onrender.com/tours').then(res => {
       const uniqueTypes = [...new Set(res.data.map(t => t.type))];
       setAvailableTypes(uniqueTypes);
     });

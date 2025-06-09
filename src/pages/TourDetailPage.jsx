@@ -46,7 +46,7 @@ const TourDetailPage = () => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/tours/${id}`)
+    axios.get(`https://hochu-tur-back.onrender.com/tours/${id}`)
       .then(res => setTour(res.data))
       .catch(err => console.error('Ошибка при загрузке тура', err));
   }, [id]);

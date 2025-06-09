@@ -20,7 +20,7 @@ const EventsPage = () => {
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/events').then(res => setEvents(res.data));
+    axios.get('https://hochu-tur-back.onrender.com/events').then(res => setEvents(res.data));
   }, []);
 
   const filteredEvents = events

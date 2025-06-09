@@ -6,7 +6,7 @@ import {
 import { Add, Delete, Edit } from '@mui/icons-material';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/events';
+const API_URL = 'https://hochu-tur-back.onrender.com/events';
 
 const EventsAdmin = () => {
   const [events, setEvents] = useState([]);

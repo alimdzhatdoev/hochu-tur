@@ -17,7 +17,7 @@ const AdminRequests = () => {
   const [bookings, setBookings] = useState([]);
 
   const fetchData = () => {
-    axios.get('http://localhost:3001/bookings').then(res => setBookings(res.data));
+    axios.get('https://hochu-tur-back.onrender.com/bookings').then(res => setBookings(res.data));
   };
 
   useEffect(() => {
@@ -26,12 +26,12 @@ const AdminRequests = () => {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Удалить заявку?')) return;
-    await axios.delete(`http://localhost:3001/bookings/${id}`);
+    await axios.delete(`https://hochu-tur-back.onrender.com/bookings/${id}`);
     fetchData();
   };
 
   const handleStatusChange = async (id, newStatus) => {
-    await axios.patch(`http://localhost:3001/bookings/${id}`, { status: newStatus });
+    await axios.patch(`https://hochu-tur-back.onrender.com/bookings/${id}`, { status: newStatus });
     setBookings(prev =>
       prev.map(booking =>
         booking.id === id ? { ...booking, status: newStatus } : booking

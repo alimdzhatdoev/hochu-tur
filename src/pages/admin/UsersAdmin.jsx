@@ -7,7 +7,7 @@ import {
 import { Add, Delete, Edit } from '@mui/icons-material';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/users';
+const API_URL = 'https://hochu-tur-back.onrender.com/users';
 
 const UsersAdmin = () => {
   const [users, setUsers] = useState([]);

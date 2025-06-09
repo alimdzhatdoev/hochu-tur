@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'https://hochu-tur-back.onrender.com';
 
 export const getFeaturedTours = async () => {
   const res = await axios.get(`${API_URL}/tours?isFeatured=true`);

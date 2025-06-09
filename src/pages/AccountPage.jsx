@@ -49,7 +49,7 @@ const AccountPage = () => {
 
   const fetchBookings = async (userId) => {
     try {
-      const res = await axios.get(`http://localhost:3001/bookings?userId=${userId}`);
+      const res = await axios.get(`https://hochu-tur-back.onrender.com/bookings?userId=${userId}`);
       setBookings(res.data);
     } catch (err) {
       console.error('Ошибка при загрузке заявок', err);

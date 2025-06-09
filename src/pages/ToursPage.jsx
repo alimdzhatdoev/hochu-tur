@@ -11,7 +11,7 @@ const ToursPage = () => {
     const [filters, setFilters] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/tours').then(res => setTours(res.data));
+        axios.get('https://hochu-tur-back.onrender.com/tours').then(res => setTours(res.data));
     }, []);
 
     const filteredTours = tours

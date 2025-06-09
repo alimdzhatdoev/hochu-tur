@@ -29,8 +29,8 @@ const HomePage = () => {
 
     const fetchData = async () => {
       const [newsRes, eventsRes] = await Promise.all([
-        axios.get('http://localhost:3001/news?_sort=date&_order=desc&_limit=3'),
-        axios.get('http://localhost:3001/events?_sort=date&_order=desc&_limit=3'),
+        axios.get('https://hochu-tur-back.onrender.com/news?_sort=date&_order=desc&_limit=3'),
+        axios.get('https://hochu-tur-back.onrender.com/events?_sort=date&_order=desc&_limit=3'),
       ]);
       setNews(newsRes.data);
       setEvents(eventsRes.data);

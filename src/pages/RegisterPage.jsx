@@ -20,13 +20,13 @@ const RegisterPage = () => {
     setError('');
 
     try {
-      const res = await axios.get(`http://localhost:3001/users?email=${form.email}`);
+      const res = await axios.get(`https://hochu-tur-back.onrender.com/users?email=${form.email}`);
       if (res.data.length > 0) {
         setError('Пользователь с таким email уже существует');
         return;
       }
 
-      await axios.post('http://localhost:3001/users', form);
+      await axios.post('https://hochu-tur-back.onrender.com/users', form);
       navigate('/login');
     } catch (err) {
       setError('Ошибка при регистрации');

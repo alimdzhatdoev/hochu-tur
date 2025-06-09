@@ -20,7 +20,7 @@ const LoginPage = () => {
     setError('');
 
     try {
-      const res = await axios.get(`http://localhost:3001/users?email=${form.email}&password=${form.password}`);
+      const res = await axios.get(`https://hochu-tur-back.onrender.com/users?email=${form.email}&password=${form.password}`);
 
       if (res.data.length === 0) {
         setError('Неверный email или пароль');

@@ -6,7 +6,7 @@ import {
 import { Add, Delete, Edit } from '@mui/icons-material';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/tours';
+const API_URL = 'https://hochu-tur-back.onrender.com/tours';
 
 const TourAdmin = () => {
   const [tours, setTours] = useState([]);
