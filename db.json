@@ -9,7 +9,13 @@
       "startDate": "2025-07-10",
       "endDate": "2025-07-13",
       "image": "sofiyskie.jpg",
-      "isFeatured": true
+      "isFeatured": true,
+      "type": "hiking",
+      "services": [
+        "guide",
+        "equipment"
+      ],
+      "maxPeople": 12
     },
     {
       "id": "2",
@@ -20,7 +26,12 @@
       "startDate": "2025-08-01",
       "endDate": "2025-08-04",
       "image": "dukki.jpg",
-      "isFeatured": false
+      "isFeatured": false,
+      "type": "hiking",
+      "services": [
+        "guide"
+      ],
+      "maxPeople": 10
     },
     {
       "id": "3",
@@ -31,7 +42,13 @@
       "startDate": "2025-07-20",
       "endDate": "2025-07-27",
       "image": "camp.jpg",
-      "isFeatured": false
+      "isFeatured": false,
+      "type": "combined",
+      "services": [
+        "guide",
+        "equipment"
+      ],
+      "maxPeople": 25
     },
     {
       "id": "4",
@@ -42,7 +59,13 @@
       "startDate": "2025-06-15",
       "endDate": "2025-06-16",
       "image": "quad.jpg",
-      "isFeatured": false
+      "isFeatured": false,
+      "type": "quad",
+      "services": [
+        "quad",
+        "guide"
+      ],
+      "maxPeople": 8
     },
     {
       "id": "5",
@@ -53,7 +76,13 @@
       "startDate": "2025-01-03",
       "endDate": "2025-01-10",
       "image": "ski.jpg",
-      "isFeatured": true
+      "isFeatured": true,
+      "type": "combined",
+      "services": [
+        "equipment",
+        "guide"
+      ],
+      "maxPeople": 16
     },
     {
       "id": "6",
@@ -64,46 +93,128 @@
       "startDate": "2025-05-05",
       "endDate": "2025-05-07",
       "image": "may.jpg",
-      "isFeatured": false
+      "isFeatured": false,
+      "type": "hiking",
+      "services": [
+        "guide"
+      ],
+      "maxPeople": 15
+    },
+    {
+      "id": "7",
+      "title": "По следам аланов",
+      "country": "Архыз",
+      "description": "Исторический тур по древним храмам и археологическим местам Архыза.",
+      "price": 8100,
+      "startDate": "2025-09-12",
+      "endDate": "2025-09-15",
+      "image": "history.jpg",
+      "isFeatured": false,
+      "type": "hiking",
+      "services": [
+        "guide"
+      ],
+      "maxPeople": 20
+    },
+    {
+      "id": "8",
+      "title": "Йога-ретрит в горах",
+      "country": "Архыз",
+      "description": "Тишина, практика и восстановление в живописных местах Кавказа.",
+      "price": 14500,
+      "startDate": "2025-07-05",
+      "endDate": "2025-07-10",
+      "image": "yoga.jpg",
+      "isFeatured": true,
+      "type": "combined",
+      "services": [
+        "equipment"
+      ],
+      "maxPeople": 14
+    },
+    {
+      "id": "9",
+      "title": "Осенний тур по Архызу",
+      "country": "Архыз",
+      "description": "Краски осени в горах, фототуры и прогулки по живописным местам.",
+      "price": 8700,
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-04",
+      "image": "autumn.jpg",
+      "isFeatured": false,
+      "type": "hiking",
+      "services": [
+        "guide"
+      ],
+      "maxPeople": 18
+    },
+    {
+      "id": "10",
+      "title": "Пеший маршрут: Архыз — Аманауз",
+      "country": "Архыз",
+      "description": "Для опытных туристов: пеший маршрут через перевалы и ущелья.",
+      "price": 11200,
+      "startDate": "2025-08-15",
+      "endDate": "2025-08-20",
+      "image": "amanaus.jpg",
+      "isFeatured": false,
+      "type": "hiking",
+      "services": [
+        "equipment",
+        "guide"
+      ],
+      "maxPeople": 10
     }
   ],
   "bookings": [
     {
-      "id": "64ae",
-      "name": "Иван Иванов",
-      "phone": "123123123",
-      "date": "2025-07-10",
-      "tourId": "1",
-      "tourTitle": "Поход к Софийским водопадам",
-      "userId": 1,
-      "userEmail": "user@mail.ru",
-      "createdAt": "2025-05-19T14:39:06.316Z"
+      "id": "db2e",
+      "name": "qwe",
+      "phone": "3242345234",
+      "email": "valip98118@inkight.com",
+      "date": "2025-08-01",
+      "people": "2",
+      "services": [
+        "guide"
+      ],
+      "total": 24000,
+      "tourId": "2",
+      "tourTitle": "Тур на озёра Дукки",
+      "userId": "3531",
+      "createdAt": "2025-06-09T11:34:37.325Z",
+      "status": "rejected"
     },
     {
-      "id": "4ec3",
-      "name": "qwe",
-      "phone": "123123123",
-      "date": "2025-07-20",
-      "tourId": "3",
-      "tourTitle": "Летний лагерь Архыза",
-      "userId": "3531",
-      "userEmail": "valip98118@inkight.com",
-      "createdAt": "2025-05-19T14:53:31.464Z"
+      "id": "8891",
+      "name": "Иван Иванов",
+      "phone": "89283345433",
+      "email": "admin@mail.ru",
+      "date": "2025-05-05",
+      "people": "2",
+      "services": [
+        "guide"
+      ],
+      "total": 17400,
+      "tourId": "6",
+      "tourTitle": "Архыз в мае",
+      "userId": "1",
+      "status": "confirmed",
+      "createdAt": "2025-06-09T11:40:24.988Z"
     }
   ],
   "users": [
     {
       "id": "1",
       "email": "admin@mail.ru",
-      "password": "admin",
+      "password": "admin@mail.ru",
       "name": "Иван Иванов",
       "role": "admin"
     },
     {
       "id": "3531",
       "name": "qwe",
-      "email": "valip98118@inkight.com",
-      "password": "123",
+      "email": "user@mail.ru",
+      "password": "user@mail.ru",
       "role": "user"
     }
   ],
@@ -243,6 +354,38 @@
       "date": "2025-06-20",
       "location": "Перевал Дукки",
       "image": "dukki.jpg"
+    },
+    {
+      "id": "e7",
+      "title": "Конный маршрут по долине",
+      "description": "Путешествие на лошадях по живописной долине.",
+      "date": "2025-06-22",
+      "location": "Архыз-центр",
+      "image": "quad.jpg"
+    },
+    {
+      "id": "e8",
+      "title": "Восхождение на вершину",
+      "description": "Маршрут для опытных с ночёвкой и видом на ледники.",
+      "date": "2025-06-24",
+      "location": "Пик Пастухова",
+      "image": "ski.jpg"
+    },
+    {
+      "id": "e9",
+      "title": "Вечерний костёр и песни",
+      "description": "Атмосферный вечер с гитарой и горячим чаем.",
+      "date": "2025-06-26",
+      "location": "Лесной лагерь",
+      "image": "camp.jpg"
+    },
+    {
+      "id": "e10",
+      "title": "Забег по горным тропам",
+      "description": "Спортивное мероприятие для всех желающих.",
+      "date": "2025-06-30",
+      "location": "Горный хребет",
+      "image": "autumn.jpg"
     }
   ]
 }
