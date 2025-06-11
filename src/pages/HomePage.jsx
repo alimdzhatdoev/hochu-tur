@@ -26,7 +26,6 @@ const HomePage = () => {
 
   useEffect(() => {
     getFeaturedTours().then(setTours);
-
     const fetchData = async () => {
       const [newsRes, eventsRes] = await Promise.all([
         axios.get('https://hochu-tur-back.onrender.com/news?_sort=date&_order=desc&_limit=3'),
@@ -35,7 +34,6 @@ const HomePage = () => {
       setNews(newsRes.data);
       setEvents(eventsRes.data);
     };
-
     fetchData();
   }, []);
 
@@ -45,8 +43,16 @@ const HomePage = () => {
         <Box
           key={item.id}
           sx={{
-            flex: '1 1 calc((100% - 48px) / 3)',
-            maxWidth: 'calc((100% - 48px) / 3)',
+            flex: {
+              xs: '1 1 100%',
+              sm: '1 1 calc(50% - 12px)',
+              md: '1 1 calc((100% - 48px) / 3)'
+            },
+            maxWidth: {
+              xs: '100%',
+              sm: 'calc(50% - 12px)',
+              md: 'calc((100% - 48px) / 3)'
+            },
             cursor: 'pointer'
           }}
           onClick={() => type === 'news' ? setSelectedNews(item) : setSelectedEvent(item)}
@@ -75,31 +81,41 @@ const HomePage = () => {
 
   return (
     <>
+      {/* Баннер */}
       <Box sx={{
         backgroundImage: `url('/images/arkhyz-banner.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '60vh',
+        height: { xs: '40vh', md: '60vh' },
         color: '#fff',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
+        px: 2,
         textShadow: '1px 1px 4px #000'
       }}>
-        <Typography variant="h3" component="h1">
+        <Typography variant={{ xs: 'h5', md: 'h3' }} component="h1">
           Путешествия по Архызу
         </Typography>
       </Box>
 
       <Container sx={{ mt: 4 }}>
-        <Box sx={{ textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-          <Typography variant="h5" gutterBottom sx={{ mb: 4 }}>
-            Популярные туры
-          </Typography>
-          <Button variant="outlined" component={Link} to="/tours">
-            Все туры
-          </Button>
+
+        {/* Популярные туры */}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          textAlign: { xs: 'center', sm: 'left' },
+          mb: 4,
+          gap: 2
+        }}>
+          <Typography variant="h5">Популярные туры</Typography>
+          <Button variant="outlined" component={Link} to="/tours">Все туры</Button>
         </Box>
+
         <Box
           sx={{
             display: 'flex',
@@ -112,8 +128,16 @@ const HomePage = () => {
             <Box
               key={tour.id}
               sx={{
-                flex: '1 1 calc((100% - 48px) / 3)',
-                maxWidth: 'calc((100% - 48px) / 3)'
+                flex: {
+                  xs: '1 1 100%',
+                  sm: '1 1 calc(50% - 12px)',
+                  md: '1 1 calc((100% - 48px) / 3)'
+                },
+                maxWidth: {
+                  xs: '100%',
+                  sm: 'calc(50% - 12px)',
+                  md: 'calc((100% - 48px) / 3)'
+                }
               }}
             >
               <TourCard tour={tour} />
@@ -123,29 +147,35 @@ const HomePage = () => {
 
         {/* Новости */}
         <Box mt={8}>
-          <Box sx={{ textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-            <Typography variant="h5" gutterBottom>
-              Последние новости
-            </Typography>
-            <Button variant="outlined" component={Link} to="/news">
-              Все новости
-            </Button>
+          <Box sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            textAlign: { xs: 'center', sm: 'left' },
+            mb: 4,
+            gap: 2
+          }}>
+            <Typography variant="h5">Последние новости</Typography>
+            <Button variant="outlined" component={Link} to="/news">Все новости</Button>
           </Box>
-
           {renderCards(news, 'news')}
         </Box>
 
         {/* Мероприятия */}
         <Box mt={8}>
-          <Box sx={{ textAlign: 'center', display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-            <Typography variant="h5" gutterBottom sx={{ mb: 4 }}>
-              Ближайшие мероприятия
-            </Typography>
-            <Button variant="outlined" component={Link} to="/events">
-              Все мероприятия
-            </Button>
+          <Box sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            textAlign: { xs: 'center', sm: 'left' },
+            mb: 4,
+            gap: 2
+          }}>
+            <Typography variant="h5">Ближайшие мероприятия</Typography>
+            <Button variant="outlined" component={Link} to="/events">Все мероприятия</Button>
           </Box>
-
           {renderCards(events, 'events')}
         </Box>
       </Container>
@@ -154,10 +184,16 @@ const HomePage = () => {
       <Modal open={!!selectedNews} onClose={() => setSelectedNews(null)}>
         <Box
           sx={{
-            position: 'absolute', top: '50%', left: '50%',
+            position: 'absolute',
+            top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 600, maxHeight: '90vh', overflowY: 'auto',
-            bgcolor: 'background.paper', boxShadow: 24, p: 4, borderRadius: 2
+            width: { xs: '90%', sm: 600 },
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2
           }}
         >
           {selectedNews && (
@@ -180,10 +216,16 @@ const HomePage = () => {
       <Modal open={!!selectedEvent} onClose={() => setSelectedEvent(null)}>
         <Box
           sx={{
-            position: 'absolute', top: '50%', left: '50%',
+            position: 'absolute',
+            top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: 600, maxHeight: '90vh', overflowY: 'auto',
-            bgcolor: 'background.paper', boxShadow: 24, p: 4, borderRadius: 2
+            width: { xs: '90%', sm: 600 },
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2
           }}
         >
           {selectedEvent && (

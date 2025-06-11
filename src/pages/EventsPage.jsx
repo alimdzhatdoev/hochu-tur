@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Container, Typography, TextField, MenuItem, Box, Card, CardMedia, CardContent, Modal, Button
+  Container,
+  Typography,
+  TextField,
+  MenuItem,
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  Modal,
+  Button
 } from '@mui/material';
 import axios from 'axios';
 
@@ -35,8 +44,17 @@ const EventsPage = () => {
     <Container sx={{ mt: 4, minHeight: '80vh' }}>
       <Typography variant="h4" gutterBottom>Мероприятия</Typography>
 
-      <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap' }}>
+      {/* Фильтры */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          gap: 2,
+          mb: 3
+        }}
+      >
         <TextField
+          fullWidth
           label="Поиск по названию"
           variant="outlined"
           value={search}
@@ -47,7 +65,7 @@ const EventsPage = () => {
           label="Сортировка"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          sx={{ minWidth: 180 }}
+          sx={{ minWidth: { xs: '100%', sm: 180 } }}
         >
           <MenuItem value="">Без сортировки</MenuItem>
           <MenuItem value="dateAsc">Сначала старые</MenuItem>
@@ -55,13 +73,29 @@ const EventsPage = () => {
         </TextField>
       </Box>
 
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'space-between' }}>
+      {/* Список карточек */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 3,
+          justifyContent: 'space-between'
+        }}
+      >
         {filteredEvents.map(event => (
           <Box
             key={event.id}
             sx={{
-              flex: '1 1 calc((100% - 48px) / 3)',
-              maxWidth: 'calc((100% - 48px) / 3)',
+              flex: {
+                xs: '1 1 100%',
+                sm: '1 1 calc(50% - 12px)',
+                md: '1 1 calc((100% - 48px) / 3)'
+              },
+              maxWidth: {
+                xs: '100%',
+                sm: 'calc(50% - 12px)',
+                md: 'calc((100% - 48px) / 3)'
+              },
               cursor: 'pointer'
             }}
             onClick={() => setSelected(event)}
@@ -85,20 +119,33 @@ const EventsPage = () => {
         ))}
       </Box>
 
+      {/* Модалка с деталями */}
       <Modal open={!!selected} onClose={() => setSelected(null)}>
-        <Box sx={{
-          position: 'absolute', top: '50%', left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 600, maxHeight: '90vh', overflowY: 'auto',
-          bgcolor: 'background.paper', boxShadow: 24, p: 4, borderRadius: 2
-        }}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%', left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: 600 },
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2
+          }}
+        >
           {selected && (
             <>
               <Typography variant="h5">{selected.title}</Typography>
               <Typography variant="body2">{formatDate(selected.date)}</Typography>
               <Typography variant="body2" gutterBottom>{selected.location}</Typography>
               <Box sx={{ my: 2 }}>
-                <img src={`/images/${selected.image}`} alt={selected.title} style={{ width: '100%' }} />
+                <img
+                  src={`/images/${selected.image}`}
+                  alt={selected.title}
+                  style={{ width: '100%', maxHeight: 300, objectFit: 'cover' }}
+                />
               </Box>
               <Typography>{selected.description}</Typography>
               <Box sx={{ textAlign: 'right', mt: 3 }}>
