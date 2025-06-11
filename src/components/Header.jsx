@@ -52,7 +52,7 @@ const Header = () => {
             to="/"
             sx={{ textDecoration: 'none', color: 'inherit' }}
           >
-            Хочу тур — Архыз
+            Тур по Архызу
           </Typography>
 
           {isMobile ? (
