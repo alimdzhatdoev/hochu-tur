@@ -48,6 +48,12 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
         </Routes>
 
+        {state?.backgroundLocation && (
+          <Routes>
+            <Route path="/tours/:id" element={<TourDetailPage />} />
+          </Routes>
+        )}
+        
         <Footer />
       </Box>
 
