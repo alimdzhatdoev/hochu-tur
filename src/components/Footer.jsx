@@ -19,7 +19,7 @@ const Footer = () => {
       }}
     >
       <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-        © Хочу тур, {new Date().getFullYear()}
+        © Тур по Архызу, {new Date().getFullYear()}
       </Typography>
 
       <Box
